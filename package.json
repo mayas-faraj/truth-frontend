@@ -1,0 +1,41 @@
+{
+  "name": "the-truth",
+  "version": "0.1.0",
+  "description": "nextjs frontend website",
+  "main": "pages/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "next start",
+    "build": "next build",
+    "dev": "next dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mayas-faraj/the-truth.git"
+  },
+  "author": "Mayas Faraj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayas-faraj/the-truth/issues"
+  },
+  "homepage": "https://github.com/mayas-faraj/the-truth#readme",
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.14",
+    "@mui/material": "^5.10.14",
+    "next": "^13.0.3",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.11",
+    "sass": "^1.56.1"
+  }
+}

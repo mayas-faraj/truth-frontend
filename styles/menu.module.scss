@@ -1,0 +1,51 @@
+@import "colors";
+.wrapper {
+  display: flex;
+}
+
+.image-container {
+  flex-basis: 80px;
+  margin-right: 20px;
+  img {
+    width: 100%;
+  }
+}
+
+.nav-wrapper {
+  flex-grow: 1;
+  margin: 12px 24px 3px 0;
+  background-color: $primary-color;
+  font-size: 20px;
+}
+
+.nav {
+}
+
+.nav-menu {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  list-style: none;
+  flex-grow: 1;
+  text-align: center;
+  padding: 19px 0;
+  a {
+    color: $secondary-color;
+    text-decoration: none;
+  }
+}
+
+.nav__item:hover {
+  background-color: $secondary-color;
+  a {
+    color: $primary-color;
+  }
+}
+
+.nav__text {
+  margin-right: 6px;
+  vertical-align: top;
+}
