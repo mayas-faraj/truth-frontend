@@ -1,0 +1,33 @@
+@import 'colors';
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+  transform: skew(15deg);
+}
+
+.post {
+  flex-basis: 400px;
+  border: 10px solid;
+  overflow: hidden;
+}
+
+.post--true {
+  border-color: $secondary-color;
+}
+
+.post--false {
+  border-color: $primary-color;
+
+  img {
+    filter: grayscale(1);
+  }
+}
+
+.post__image {
+  max-width: 140%;
+  margin-right: -85px;
+  transform: skew(-15deg);
+}

@@ -8,10 +8,10 @@ import CallIcon from '@mui/icons-material/Call';
 import style from '/styles/menu.module.scss';
 export default function Header(props) {
   const items=[
-    { title: "الصفحة الرئيسية", icon: <HomeIcon/>, link: "" },
+    { title: "الصفحة الرئيسية", icon: <HomeIcon/>, link: "/" },
     { title: "حقيقة الأخبار", icon: <LanguageIcon/>, link: "news" },
     { title: "تقارير", icon: <AssignmentIcon/>, link: "reports" },
-    { title: "حول الموقع", icon: <InfoIcon/>, link: "about-us" },
+    { title: "كيفية العمل", icon: <InfoIcon/>, link: "about-us" },
     { title: "اتصل بنا", icon: <CallIcon/>, link: "contact-us" },
   ];
   return (

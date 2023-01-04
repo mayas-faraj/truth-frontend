@@ -1,11 +1,32 @@
 @import "colors";
+@import "sizes";
 
 html {
   direction: rtl;
   font-family: 'Almarai', sans-serif;
+  font-size: calc(14px + .15vw);
 }
 
 .title-special {
-  font-size: 'Blaka Ink', cursive;
+  font-family: 'Blaka Ink', cursive;
 }
 
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+
+  @media (max-width: $mobile-width) {
+  }   
+
+  @media (min-width: $mobile-width) and (max-width: $tablet-width) {
+  }
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width) {
+    max-width: $tablet-width;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: $desktop-width;
+  }
+}

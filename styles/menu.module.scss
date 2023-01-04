@@ -15,7 +15,7 @@
   flex-grow: 1;
   margin: 12px 24px 3px 0;
   background-color: $primary-color;
-  font-size: 20px;
+  font-size: 1.3rem;
 }
 
 .nav {
@@ -35,6 +35,8 @@
   a {
     color: $secondary-color;
     text-decoration: none;
+    width: 100%;
+    display: inline-block;
   }
 }
 

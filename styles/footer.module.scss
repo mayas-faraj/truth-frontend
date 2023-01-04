@@ -1,34 +1,71 @@
 @import "colors";
 
+.footer {
+  background-color: $primary-color;
+}
+
 .wrapper {
-  display: initial;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .section {
-  display: initial;
+  flex-basis: 170px;
+  flex-grow: 1;
+  padding: 25px;
+}
+
+.section__logo {
+  max-width: 225px;
+  width: 100%;
+  margin: 0 auto;
+  filter: contrast(0)
 }
 
 .section__title {
-  display: initial;
+  font-size: 1.2rem;
+  color: lighten($footer-text-color, 10%);
 }
 
 .section__text {
-  display: initial;
+  color: $footer-text-color;
 }
 
 .links {
-  display: initial;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .links__item {
-  display: initial;
+  flex-basis: 30%;
+  transition: transform .5s;
+}
+
+.links__item:hover img {
+  filter: none;
 }
 
 .links__item-image {
-  display: initial;
+  width: 50px;
+  height: 50px;
+  filter: contrast(0);
+  transition: filter 1s;
+  object-fit: contain;
+  padding: 8px 0;
 }
 
-.links__item-icon {
-  display: initial;
+.socials__item {
+  flex-basis: 25%;
+}
+
+.socials__item-icon {
+  fill: $footer-text-color;
+  padding: 10px 0 0 30px;
+  transition: fill 1s;
+}
+
+.socials__item-icon:hover {
+  fill: $secondary-color;
 }
 
