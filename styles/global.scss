@@ -5,10 +5,17 @@ html {
   direction: rtl;
   font-family: 'Almarai', sans-serif;
   font-size: calc(14px + .15vw);
+  background-image: url('../public/assets/imgs/bg.svg');
+  background-color: #ffffffa8;
+  background-blend-mode: overlay;
 }
 
 .title-special {
   font-family: 'Blaka Ink', cursive;
+}
+
+.MuiTimeline-root * {
+  font-family: 'Almarai', sans-serif;
 }
 
 .container {
