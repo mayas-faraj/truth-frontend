@@ -1,63 +1,58 @@
 import React, {Fragment} from 'react';
+import SettingContext from '../components/setting-context.jsx';
+import urls from '../public/assets/data/urls.json';
 import style from '../styles/home.module.scss';
 
-export default function Home(props) {
+export default function Home({ mainArticle, articles, categories }) {
+console.dir(categories, {depth: null});
 	return (
-		<Fragment>
-      <div className={style['header']+" "+"section"}>
-        <div className={style['post']+" "+style['post--false']}>
-          <img className={style['post__image']} src="https://cdnuploads.aa.com.tr/uploads/Contents/2022/07/05/thumbs_b_c_f489ac4095657554849adeb6b862e01c.jpg?v=142414"/>
-          <h2 className={style['post__title']}>القوات الروسية تقصف المناطق المدنية</h2>
-          <p className={style['post__text']}>
-            قالت السلطات في كييف إن الصواريخ الروسية استهدفت اليوم 40 مدينة أوكرانية، في حين أكدت وزارة الدفاع الروسية أن قواتها أحبطت هجوما للقوات الأوكرانية في خيرسون.
-
-وقال مسؤول في مكتب الرئاسة الأوكرانية إن طائرات مسيرة قصفت -صباح اليوم الخميس- منشآت حيوية للبنية التحتية في مقاطعة كييف، وذلك ضمن حملة القصف المكثف التي بدأتها روسيا الاثنين الماضي، ردا على تفجير جسر القرم.
-          </p>
-        </div>
-         <div className={style['post']+" "+style['post--true']}>
-          <img className={style['post__image']} src="https://cdnuploads.aa.com.tr/uploads/Contents/2022/07/05/thumbs_b_c_f489ac4095657554849adeb6b862e01c.jpg?v=142414"/>
-          <h2 className={style['post__title']}>القوات الروسية تقصف القيادات العسكرية</h2>
-          <p className={style['post__text']}>
-          قامت القوات الروسية باستهداف المراكز العسكرية والمراكز القيادية ومباني التحكم ضمن المدن والبلدات بشكل دقيق بشكل لا يشكل ضرر على المدنيين والتي استخدمت الصور ضدها في عملية التحريض على العملية العسكرية الروسية في أوكرانيا
-          </p>
-        </div>
+    <div className={style.wrapper}>
+    {
+      mainArticle && (
+      <div className={style['main-article']}>
+      {mainArticle.attributes.title}
       </div>
-      <div className={style['header']+" "+"section"}>
-        <div className={style['post']+" "+style['post--true']}>
-          <img className={style['post__image']} src="https://cdnuploads.aa.com.tr/uploads/Contents/2022/12/21/thumbs_b_c_2f37cfae66a0b8a67b4755ec3b1afa15.jpg?v=163115"/>
-          <h2 className={style['post__title']}>روسيا تبحث طرق المفاوضات لحل الأزمة الأوكرانية</h2>
-          <p className={style['post__text']}>
-            قالت السلطات في كييف إن الصواريخ الروسية استهدفت اليوم 40 مدينة أوكرانية، في حين أكدت وزارة الدفاع الروسية أن قواتها أحبطت هجوما للقوات الأوكرانية في خيرسون.
-
-وقال مسؤول في مكتب الرئاسة الأوكرانية إن طائرات مسيرة قصفت -صباح اليوم الخميس- منشآت حيوية للبنية التحتية في مقاطعة كييف، وذلك ضمن حملة القصف المكثف التي بدأتها روسيا الاثنين الماضي، ردا على تفجير جسر القرم.
-          </p>
-        </div>
-         <div className={style['post']+" "+style['post--false']}>
-          <img className={style['post__image']} src="https://cdnuploads.aa.com.tr/uploads/Contents/2022/12/21/thumbs_b_c_2f37cfae66a0b8a67b4755ec3b1afa15.jpg?v=163115"/>
-          <h2 className={style['post__title']}>اجتماع روسي لبحث حل عن المستنقع الاوكراني</h2>
-          <p className={style['post__text']}>
-          قامت القوات الروسية باستهداف المراكز العسكرية والمراكز القيادية ومباني التحكم ضمن المدن والبلدات بشكل دقيق بشكل لا يشكل ضرر على المدنيين والتي استخدمت الصور ضدها في عملية التحريض على العملية العسكرية الروسية في أوكرانيا
-          </p>
-        </div>
-      </div>
-      <div className={style['header']+" "+"section"}>
-        <div className={style['post']+" "+style['post--false']}>
-          <img className={style['post__image']} src="https://cdnuploads.aa.com.tr/uploads/Contents/2022/12/27/thumbs_b_c_cdccaafaf0997c9b9a844d1466df2557.jpg?v=195332"/>
-          <h2 className={style['post__title']}>اسعار النفط تنخفض بشكل ملحوظ بعد الحرب الروسية الأوكرانية</h2>
-          <p className={style['post__text']}>
-            قالت السلطات في كييف إن الصواريخ الروسية استهدفت اليوم 40 مدينة أوكرانية، في حين أكدت وزارة الدفاع الروسية أن قواتها أحبطت هجوما للقوات الأوكرانية في خيرسون.
-
-وقال مسؤول في مكتب الرئاسة الأوكرانية إن طائرات مسيرة قصفت -صباح اليوم الخميس- منشآت حيوية للبنية التحتية في مقاطعة كييف، وذلك ضمن حملة القصف المكثف التي بدأتها روسيا الاثنين الماضي، ردا على تفجير جسر القرم.
-          </p>
-        </div>
-         <div className={style['post']+" "+style['post--true']}>
-          <img className={style['post__image']} src="https://cdnuploads.aa.com.tr/uploads/Contents/2022/12/27/thumbs_b_c_cdccaafaf0997c9b9a844d1466df2557.jpg?v=195332"/>
-          <h2 className={style['post__title']}>زيادة الطلب على المشتقات النفطية تؤدي لارتفاع الاسعار</h2>
-          <p className={style['post__text']}>
-          قامت القوات الروسية باستهداف المراكز العسكرية والمراكز القيادية ومباني التحكم ضمن المدن والبلدات بشكل دقيق بشكل لا يشكل ضرر على المدنيين والتي استخدمت الصور ضدها في عملية التحريض على العملية العسكرية الروسية في أوكرانيا
-          </p>
-        </div>
-      </div>
-		</Fragment>
+    )}
+    {
+      articles.map(article => (
+        <h2 key={article.title}>{article.attributes.title}</h2>
+      ))
+    }
+    </div>
 	);
+}
+
+export async function getStaticProps(context) {
+  // read articles
+  let result = await fetch(`${urls.backend_url}/api/articles?pagination[page]=1&pagination[pageSize]=10`);
+  const articlesResult = await result.json();
+  const articles = articlesResult.data;
+  let mainArticle = null;
+
+  for (let i = 0; i< articles.length; i++) 
+    if(articles[i].attributes.isFeatured) {
+      const splicedArray = articles.splice(i, 1);
+      mainArticle = splicedArray[0];
+      break;
+    }
+
+  // read categories
+  result = await fetch(`${urls.backend_url}/api/categories?pagination[page]=1&pagination[pageSize]=5`);
+  const categoriesResult = await result.json();
+  const categories = categoriesResult.data;
+
+  for (let i = 0; i< categories.length; i++) {
+    const articlesOfCategoryResult = await fetch(`${urls.backend_url}/api/articles?pagination[page]=1&pagination[pageSize]=2&filters[category]=${categories[i].id}`);
+    const articlesOfCategory = await articlesOfCategoryResult.json();
+    const articlesOfCategoryData = articlesOfCategory.data;
+    categories[i].articles=articlesOfCategoryData;
+    }
+
+  return {
+    props: {
+      mainArticle,
+      articles,
+      categories
+    }
+  }
 }
