@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import MainArticle from '../components/main-article';
 import SettingContext from '../components/setting-context.jsx';
 import urls from '../public/assets/data/urls.json';
 import style from '../styles/home.module.scss';
@@ -7,12 +8,7 @@ export default function Home({ mainArticle, articles, categories }) {
 console.dir(categories, {depth: null});
 	return (
     <div className={style.wrapper}>
-    {
-      mainArticle && (
-      <div className={style['main-article']}>
-      {mainArticle.attributes.title}
-      </div>
-    )}
+    { mainArticle && <MainArticle content={mainArticle} /> }
     {
       articles.map(article => (
         <h2 key={article.title}>{article.attributes.title}</h2>
@@ -24,7 +20,7 @@ console.dir(categories, {depth: null});
 
 export async function getStaticProps(context) {
   // read articles
-  let result = await fetch(`${urls.backend_url}/api/articles?pagination[page]=1&pagination[pageSize]=10`);
+  let result = await fetch(`${urls.backend_url}/api/articles?pagination[page]=1&pagination[pageSize]=10&populate[0]=truthCover&populate[1]=falseCover`);
   const articlesResult = await result.json();
   const articles = articlesResult.data;
   let mainArticle = null;
