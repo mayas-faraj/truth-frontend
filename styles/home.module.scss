@@ -1,1 +1,24 @@
 @import 'colors';
+
+.content-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.news_section {
+    flex-basis: 300px;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    &>* {
+        flex-basis: 325px;
+    }
+    
+}
+
+.sidebar_section  {
+    flex-basis: 300px;
+}

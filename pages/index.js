@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import MainArticle from '../components/main-article';
-import SettingContext from '../components/setting-context.jsx';
+import Article from '../components/article';
 import urls from '../public/assets/data/urls.json';
 import style from '../styles/home.module.scss';
 
@@ -8,12 +8,16 @@ export default function Home({ mainArticle, articles, categories }) {
 console.dir(categories, {depth: null});
 	return (
     <div className={style.wrapper}>
-    { mainArticle && <MainArticle content={mainArticle} /> }
-    {
-      articles.map(article => (
-        <h2 key={article.title}>{article.attributes.title}</h2>
-      ))
-    }
+      <section className={style['main-section']}>
+      { mainArticle && <MainArticle content={mainArticle} /> }
+      </section>
+      <section className={style['content-section']}>
+        <section className={style['news_section']}>
+          { articles.map(article => <Article content={article} />) }
+        </section>
+        <section className={style['sidebar_section']}>
+        </section>
+      </section>
     </div>
 	);
 }

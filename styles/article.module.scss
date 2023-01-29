@@ -1,0 +1,67 @@
+@import 'colors';
+
+.article__image-container {
+  position: relative;
+
+  &:hover .article__image--false {
+    filter: none;
+  }
+}
+
+.article__image {
+  width: 100%;
+  border-radius: 0 20px 0 0;
+}
+
+.article__image--truth {
+  clip-path: polygon(0 0, 100% 100%, 100% 0%);
+  position: relative;
+  z-index: 99;
+}
+
+.article__image--false {
+  position: absolute;
+  right: 0;
+  top: 0;
+  filter: grayscale(1);
+  transition: filter .5s;
+}
+
+.article__title,
+.article__content {
+  margin: -8px 0 0 0;
+  padding: 12px;
+}
+
+.article__title {
+  background-color: $primary-color;
+  color: $secondary-color;
+  
+  a {
+    color: $title-accent-color;
+    text-decoration: none;
+  }
+}
+
+.article__content {
+  background: $secondary-color;
+  color: $primary-color;
+  height: 100px;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.article__content::-webkit-scrollbar {
+  width: 0;
+}
+
+.article__date {
+  background-color: $accent-color;
+  padding: 10px;
+
+  svg {
+    vertical-align: middle;
+    margin-left: 8px;
+    margin-top: -4px;
+  }
+}
