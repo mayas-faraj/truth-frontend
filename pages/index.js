@@ -1,11 +1,11 @@
 import React, {Fragment} from 'react';
 import MainArticle from '../components/main-article';
 import Article from '../components/article';
+import Category from '../components/category';
 import urls from '../public/assets/data/urls.json';
 import style from '../styles/home.module.scss';
 
 export default function Home({ mainArticle, articles, categories }) {
-console.dir(categories, {depth: null});
 	return (
     <div className={style.wrapper}>
       <section className={style['main-section']}>
@@ -13,9 +13,10 @@ console.dir(categories, {depth: null});
       </section>
       <section className={style['content-section']}>
         <section className={style['news_section']}>
-          { articles.map(article => <Article content={article} />) }
+          { articles.map(article => <Article key={article.slug} content={article} />) }
         </section>
         <section className={style['sidebar_section']}>
+        { categories.map(category=><Category key={category.name} content={category} />) }
         </section>
       </section>
     </div>
@@ -42,7 +43,7 @@ export async function getStaticProps(context) {
   const categories = categoriesResult.data;
 
   for (let i = 0; i< categories.length; i++) {
-    const articlesOfCategoryResult = await fetch(`${urls.backend_url}/api/articles?pagination[page]=1&pagination[pageSize]=2&filters[category]=${categories[i].id}`);
+    const articlesOfCategoryResult = await fetch(`${urls.backend_url}/api/articles?pagination[page]=1&pagination[pageSize]=2&populate[0]=truthCover&filters[category]=${categories[i].id}`);
     const articlesOfCategory = await articlesOfCategoryResult.json();
     const articlesOfCategoryData = articlesOfCategory.data;
     categories[i].articles=articlesOfCategoryData;
