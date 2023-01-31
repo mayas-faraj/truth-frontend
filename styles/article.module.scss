@@ -2,15 +2,31 @@
 
 .article__image-container {
   position: relative;
+  border-top: 5px solid $secondary-color;
 
   &:hover .article__image--false {
     filter: none;
   }
+
+  &::after {
+    content: ' ';
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: $secondary-color;
+    position: absolute;
+    top: 0;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    z-index: 999;
+}
 }
 
-.article__image {
+.article__image,
+.article__video {
   width: 100%;
-  border-radius: 0 20px 0 0;
+  height: 250px;
+  object-fit: cover;
 }
 
 .article__image--truth {
@@ -36,11 +52,25 @@
 .article__title {
   background-color: $primary-color;
   color: $secondary-color;
+  height: 3rem;
+  position: relative;
   
   a {
     color: $title-accent-color;
     text-decoration: none;
   }
+
+  &::after {
+    display: block;
+    background-color: $primary-color;
+    content: ' ';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 0;
+    bottom: -29px;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
 }
 
 .article__content {
@@ -57,7 +87,20 @@
 
 .article__date {
   background-color: $accent-color;
+  position: relative;
   padding: 10px;
+
+  &::after {
+    display: block;
+    background-color: $accent-color;
+    content: " ";
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
 
   svg {
     vertical-align: middle;

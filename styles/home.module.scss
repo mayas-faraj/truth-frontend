@@ -3,22 +3,25 @@
 .content-section {
     display: flex;
     flex-wrap: wrap;
+    gap: 35px;
     margin-bottom: 30px;
 }
 
 .news_section {
     flex-basis: 300px;
-    flex-grow: 1;
+    flex-grow: 6;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
 
     &>* {
         flex-basis: 325px;
+        flex-grow: 1;
     }
     
 }
 
 .sidebar_section  {
-    flex-basis: 300px;
+    flex-basis: 250px;
+    flex-grow: 1;
 }

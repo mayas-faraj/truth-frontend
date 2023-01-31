@@ -25,7 +25,7 @@ export default function Home({ mainArticle, articles, categories }) {
 
 export async function getStaticProps(context) {
   // read articles
-  let result = await fetch(`${urls.backend_url}/api/articles?pagination[page]=1&pagination[pageSize]=10&populate[0]=truthCover&populate[1]=falseCover`);
+  let result = await fetch(`${urls.backend_url}/api/articles?pagination[page]=1&pagination[pageSize]=12&populate[0]=truthCover&populate[1]=falseCover`);
   const articlesResult = await result.json();
   const articles = articlesResult.data;
   let mainArticle = null;

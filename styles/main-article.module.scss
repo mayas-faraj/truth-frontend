@@ -53,9 +53,10 @@
   }
 }
 
-.article__image {
+.article__image,
+.article__video {
   width: 100%;
-  height: 400px;
+  height: 500px;
   object-fit: cover;
   margin-bottom: -8px;
 }
