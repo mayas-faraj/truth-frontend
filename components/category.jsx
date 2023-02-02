@@ -11,7 +11,7 @@ const Category = ({ content }) => {
           content.articles.map(article => (
             <div className={style.category__article}>
               <div className={style.category__image_container}>
-                <Link href={article.attributes.slug}>
+                <Link href={'/news/' + article.attributes.slug}>
                   <img className={style.category__image} alt={article.attributes.truthCover.data.attributes.alternativeText} src={urls.backend_url + article.attributes.truthCover.data.attributes.formats.thumbnail.url} />
                 </Link>
               </div>
