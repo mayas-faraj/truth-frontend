@@ -1,22 +1,12 @@
+
 @import 'colors';
 
 .wrapper {
     display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 25px;
+    gap: 30px;
 }
 
-.main-section {
-    margin: 25px 0;
-}
-
-.content-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 35px;
-}
-
-.news-section {
+.article_section {
     flex-basis: 300px;
     flex-grow: 6;
     display: flex;
@@ -30,7 +20,8 @@
     
 }
 
-.sidebar-section  {
+.sidebar_section  {
     flex-basis: 250px;
     flex-grow: 1;
+    margin: 35px 0;
 }

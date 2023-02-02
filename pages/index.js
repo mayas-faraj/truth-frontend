@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import MainArticle from '../components/main-article';
 import Article from '../components/article';
 import Category from '../components/category';
@@ -12,10 +12,10 @@ export default function Home({ mainArticle, articles, categories }) {
       { mainArticle && <MainArticle content={mainArticle} /> }
       </section>
       <section className={style['content-section']}>
-        <section className={style['news_section']}>
+        <section className={style['news-section']}>
           { articles.map(article => <Article key={article.slug} content={article} />) }
         </section>
-        <section className={style['sidebar_section']}>
+        <section className={style['sidebar-section']}>
         { categories.map(category=><Category key={category.name} content={category} />) }
         </section>
       </section>
