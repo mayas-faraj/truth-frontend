@@ -1,0 +1,24 @@
+@import 'colors';
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $secondary-color;
+    padding: 30px;
+}
+
+.image-container {
+    border: 3px solid $primary-color;
+    flex-basis: 200px;
+    flex-grow: 1;
+}
+
+.text-container {
+    flex-basis: 500px;
+    flex-grow: 4;
+    padding: 10px;
+}
+
+.image-container__image {
+    width: 100%;
+}

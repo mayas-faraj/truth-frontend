@@ -9,10 +9,10 @@ import style from '/styles/menu.module.scss';
 export default function Header(props) {
   const items=[
     { title: "الصفحة الرئيسية", icon: <HomeIcon/>, link: "/" },
-    { title: "حقيقة الأخبار", icon: <LanguageIcon/>, link: "news" },
-    { title: "تقارير", icon: <AssignmentIcon/>, link: "reports" },
-    { title: "كيفية العمل", icon: <InfoIcon/>, link: "about-us" },
-    { title: "اتصل بنا", icon: <CallIcon/>, link: "contact-us" },
+    { title: "حقيقة الأخبار", icon: <LanguageIcon/>, link: "/news" },
+    { title: "تقارير", icon: <AssignmentIcon/>, link: "/reports" },
+    { title: "كيفية العمل", icon: <InfoIcon/>, link: "/about-us" },
+    { title: "اتصل بنا", icon: <CallIcon/>, link: "/contact-us" },
   ];
   return (
     <div className={style["wrapper"]}>

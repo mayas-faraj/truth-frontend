@@ -7,9 +7,9 @@ const ArticlePage = ({ content }) => {
     <article className={style['wrapper']}>
       <h1 className={style.title}><span>{content.attributes.title}</span></h1>
       <div className={style['image-wrapper']}>
-        {content.attributes.falseCover.data?.attributes?.mime.startsWith('image') &&
+        {content.attributes.truthCover.data?.attributes?.mime.startsWith('image') &&
           <div className={style['image-container'] + ' ' + style['image-container--truth']}>
-            <img className={style['article__image']} alt={content.attributes.falseCover.data.attributes.alternativeText} src={urls.backend_url + content.attributes.falseCover.data.attributes.url} />
+            <img className={style['article__image']} alt={content.attributes.truthCover.data.attributes.alternativeText} src={urls.backend_url + content.attributes.truthCover.data.attributes.url} />
           </div>
         }
         {content.attributes.falseCover.data?.attributes?.mime.startsWith('image') &&
@@ -17,10 +17,10 @@ const ArticlePage = ({ content }) => {
             <img className={style['article__image']} alt={content.attributes.falseCover.data.attributes.alternativeText} src={urls.backend_url + content.attributes.falseCover.data.attributes.url} />
           </div>
         }
-        {content.attributes.falseCover.data?.attributes?.mime.startsWith('video') &&
+        {content.attributes.truthCover.data?.attributes?.mime.startsWith('video') &&
           <div className={style['video-container'] + ' ' + style['video-container--truth']}>
             <video className={style['article__video']}>
-              <source src={urls.backend_url + content.attributes.falseCover.data.attributes.url} type={content.attributes.falseCover.data.mime} />
+              <source src={urls.backend_url + content.attributes.truthCover.data.attributes.url} type={content.attributes.truthCover.data.mime} />
             </video>
           </div>
         }

@@ -1,0 +1,70 @@
+@import 'colors';
+
+.title {
+    text-align: center;
+    margin: 50px 0;
+
+    span {
+        color: $secondary-color;
+        position: relative;
+        padding: 25px;
+
+        &::after {
+            display: block;
+            position: absolute;
+            content: '';
+            background-color: $primary-color;
+            top: -0.4rem;
+            left: 0;
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+            height: 5rem;
+            width: 100%;
+            z-index: -1;
+        }
+    }
+
+}
+
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.image-container {
+    position: relative;
+
+    &::after {
+        content: ' ';
+        display: block;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 0;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%);
+        z-index: 999;
+    }
+}
+
+.image-container--false {
+    border-left: 8px solid $primary-color;
+    img {
+        filter: grayscale(1);
+    }
+    &::after {
+        background-color: $primary-color;
+    }
+}
+
+.image-container--truth {
+    border-left: 8px solid $secondary-color;
+    &::after {
+        background-color: $secondary-color;
+    }
+}
+
+.article__image,
+.article__video {
+    width: 100%;
+}

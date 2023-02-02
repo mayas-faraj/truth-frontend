@@ -1,19 +1,11 @@
 import React from 'react';
-import { Router } from 'next/router'
-import ReportPage from '../components/report-page';
-import Category from '../components/category';
-import urls from '../public/assets/data/urls.json';
-import style from '../styles/reports.module.scss';
+import ReportPage from '../../components/report-page';
+import urls from '../../public/assets/data/urls.json';
 
-export default function ReportPage({ reports }) {
+export default function Slug({ report, categories }) {
 	return (
-    <div className={style.wrapper}>
-      <section className={style['report_section']}>
+    <div>
       <ReportPage key={report.slug} content={report} />
-      </section>
-      <section className={style['sidebar_section']}>
-      { categories.map(category=><Category key={category.name} content={category} />) }
-      </section>
     </div>
 	);
 }
@@ -35,7 +27,7 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-		reports
+      report
     }
   }
 }

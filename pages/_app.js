@@ -4,7 +4,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 
-import Header from '/components/header';
+import Header from '../components/header';
 import Footer from '../components/footer';
 import "../styles/global.scss";
 

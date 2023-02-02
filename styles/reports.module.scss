@@ -1,0 +1,11 @@
+@import 'colors';
+
+.wrapper {
+    margin: 30px 0;
+}
+
+.content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
