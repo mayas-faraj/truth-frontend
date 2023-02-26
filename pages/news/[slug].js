@@ -9,10 +9,10 @@ export default function Slug({ article, categories }) {
 	return (
     <div className={style.wrapper}>
       <section className={style['article_section']}>
-      <ArticlePage key={article.slug} content={article} />
+      <ArticlePage key={article.attributes.slug} content={article} />
       </section>
       <section className={style['sidebar_section']}>
-      { categories.map(category=><Category key={category.name} content={category} />) }
+      { categories.map(category=><Category key={category.attributes.name} content={category} />) }
       </section>
     </div>
 	);

@@ -12,8 +12,8 @@
   position: relative;
 }
 
-.article-wrapper--truth {
-  border: 12px solid $secondary-color;
+.article-wrapper--false {
+  border: 12px solid $primary-color;
   border-left: none;
   border-radius: 0 30px 0 0;
 
@@ -30,8 +30,8 @@
   }
 }
 
-.article-wrapper--false {
-  border: 12px solid $primary-color;
+.article-wrapper--truth {
+  border: 12px solid $secondary-color;
   border-right: none;
   border-radius: 0 0 0 30px;
 

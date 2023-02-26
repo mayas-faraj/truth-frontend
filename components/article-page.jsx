@@ -19,20 +19,28 @@ const ArticlePage = ({ content }) => {
         }
         {content.attributes.truthCover.data?.attributes?.mime.startsWith('video') &&
           <div className={style['video-container'] + ' ' + style['video-container--truth']}>
-            <video className={style['article__video']}>
+            <video controls className={style['article__video']}>
               <source src={urls.backend_url + content.attributes.truthCover.data.attributes.url} type={content.attributes.truthCover.data.mime} />
             </video>
           </div>
         }
         {content.attributes.falseCover.data?.attributes?.mime.startsWith('video') &&
           <div className={style['video-container'] + ' ' + style['video-container--false']}>
-            <video className={style['article__video']}>
+            <video controls className={style['article__video']}>
               <source src={urls.backend_url + content.attributes.falseCover.data.attributes.url} type={content.attributes.falseCover.data.mime} />
             </video>
           </div>
         }
       </div>
-      <p className={style['article__content']}>{ content.attributes.content[0].body }</p>
+      <div className={style['subtitle-wrapper']}>
+        <h2 className={style['subtitle']}>{content.attributes.truthTitle}</h2>
+        <h2 className={style['subtitle']}>{content.attributes.falseTitle}</h2>
+      </div>
+      <div className={style['excerpt-wrapper']}>
+        <p className={style['excerpt']}>{content.attributes.truthExcerpt}</p>
+        <p className={style['excerpt']}>{content.attributes.falseExcerpt}</p>
+      </div>
+      <p className={style['article__content']}>{ content.attributes.content[0] != null ? content.attributes.content[0].body : ""}</p>
       <div className={style['article__date']}><AccessTimeIcon /><time dateTime={content.attributes.createdAt}>{new Date(content.attributes.createdAt).toLocaleDateString()}</time></div>
     </article>
   )

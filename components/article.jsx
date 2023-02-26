@@ -15,7 +15,7 @@ const Article = ({content}) => {
             </Link>
           }
           { content.attributes.truthCover.data?.attributes?.mime.startsWith('video') && 
-            <video className={style['article__video']}>
+            <video className={style['article__video']} controls>
               <source src={urls.backend_url + content.attributes.truthCover.data.attributes.url} type={content.attributes.truthCover.data.mime} />
             </video>
           }

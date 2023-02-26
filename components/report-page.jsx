@@ -14,7 +14,7 @@ const ReportPage = ({ content }) => {
         }
         {content.attributes.cover.data?.attributes?.mime.startsWith('video') &&
           <div className={style['video-container'] + ' ' + style['video-container--false']}>
-            <video className={style['report__video']}>
+            <video controls className={style['report__video']}>
               <source src={urls.backend_url + content.attributes.cover.data.attributes.url} type={content.attributes.cover.data.mime} />
             </video>
           </div>

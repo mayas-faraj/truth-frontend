@@ -4,7 +4,6 @@ import urls from '../public/assets/data/urls.json';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 const Report = ({content}) => {
-    console.dir(content, { depth: null });
     return (
         <div className={style.wrapper}>
           <div className={style['image-container']}>

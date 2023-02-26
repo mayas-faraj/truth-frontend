@@ -9,13 +9,22 @@ const Category = ({ content }) => {
       <div className={style.category__articles}>
         {
           content.articles.map(article => (
-            <div className={style.category__article}>
+            <div key={article.attributes.slug} className={style.category__article}>
               <div className={style.category__image_container}>
                 <Link href={'/news/' + article.attributes.slug}>
-                  <img className={style.category__image} alt={article.attributes.truthCover.data.attributes.alternativeText} src={urls.backend_url + article.attributes.truthCover.data.attributes.formats.thumbnail.url} />
+                {
+                  article.attributes.truthCover.data?.attributes?.mime.startsWith('image') && 
+                  <img className={style.category__image} alt={article.attributes.truthCover.data.attributes.alternativeText} src={urls.backend_url + article.attributes.truthCover?.data.attributes.formats.thumbnail.url} />
+                }
+                {
+                  article.attributes.truthCover?.data?.attributes?.mime.startsWith('video') && 
+                  <video className={style.category__video} controls>
+                    <source src={urls.backend_url + article.attributes.truthCover?.data.attributes.url} type={article.attributes.truthCover.data.attributes.mime} />
+                  </video>
+                }
                 </Link>
               </div>
-              <p className={style.cateogry__article_text}>{article.attributes.title}</p>
+              <p className={style.category__article_text}>{article.attributes.title}</p>
             </div>
           ))
         }

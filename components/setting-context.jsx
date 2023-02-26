@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SettingContext = React.createContext({
-  backendUrl: 'http://127.0.0.1/'
+  backendUrl: 'http://syria-in.com/truth/'
 });
 
 export default SettingContext;

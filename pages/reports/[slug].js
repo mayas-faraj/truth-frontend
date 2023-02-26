@@ -5,7 +5,7 @@ import urls from '../../public/assets/data/urls.json';
 export default function Slug({ report, categories }) {
 	return (
     <div>
-      <ReportPage key={report.slug} content={report} />
+      <ReportPage key={report.attributes.slug} content={report} />
     </div>
 	);
 }

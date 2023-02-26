@@ -60,12 +60,12 @@
 }
 
 .socials__item-icon {
-  fill: $footer-text-color;
+  fill: $footer-text-color !important;
   padding: 10px 0 0 30px;
   transition: fill 1s;
 }
 
 .socials__item-icon:hover {
-  fill: $secondary-color;
+  fill: $secondary-color !important;
 }
 
