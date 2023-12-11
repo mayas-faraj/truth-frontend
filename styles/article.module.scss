@@ -2,65 +2,29 @@
 
 .article__image-container {
   position: relative;
-  border-top: 5px solid $secondary-color;
-
-  &:hover .article__image--false {
-    filter: none;
-  }
-
-  &::before {
-    content: '\2713';
-    display: block;
-    width: 60px;
-    height: 60px;
-    background: $secondary-color;
-    color: $true-color;
-    font-size: 2.5rem;
-    position: absolute;
-    top: -1px;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%);
-    z-index: 999;
-  }
-
-  &::after {
-    content: '\00d7';
-    display: block;
-    width: 60px;
-    height: 60px;
-    background: $primary-color;
-    color: $false-color;
-    font-size: 2.5rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    -webkit-clip-path: polygon(0 0, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 100% 100%, 0 100%);
-    z-index: 999;
-    padding-right: 38px;
-    padding-top: 19px;
-    box-sizing: border-box;
-}
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .article__image,
 .article__video {
-  width: 100%;
+  width: 70%;
   height: 250px;
   object-fit: cover;
 }
 
 .article__image--truth {
-  clip-path: polygon(0 0, 100% 100%, 100% 0%);
-  position: relative;
-  z-index: 99;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%)
 }
 
 .article__image--false {
-  position: absolute;
-  right: 0;
-  top: 0;
+  clip-path: polygon(0 0, 50% 0, 100% 100%, 0 100%);
+}
+
+.article__image--false {
   filter: grayscale(1);
+  margin-right: -40%;
   transition: filter .5s;
 }
 
@@ -79,6 +43,39 @@
   a {
     color: $title-accent-color;
     text-decoration: none;
+  }
+}
+
+.article-image-link {
+  display: flex;
+  position: relative;
+
+  &::after,
+  &::before {
+    position: absolute;
+    border: 3px solid;
+    border-radius: 8px;
+    padding: 5px;
+    z-index: 999;
+    font-weight: 900;
+    animation: glow 1s ease-in 8 reverse;
+    box-shadow: 0 0 10px;
+  }
+
+  &::before {
+    content: 'FACT';
+    color: $true-color;
+    top: 15px;
+    right: 15px;
+    transform: rotate(30deg);
+  }
+
+  &::after {
+    content: 'FAKE';
+    color: $false-color;
+    bottom: 15px;
+    left: 15px;
+    transform: rotate(-30deg);
   }
 }
 
@@ -115,5 +112,19 @@
     vertical-align: middle;
     margin-left: 8px;
     margin-top: -4px;
+  }
+}
+
+@keyframes glow {
+  0% {
+    opacity: .8;
+  }
+
+  50% {
+    opacity: .3;
+  }
+
+  100% {
+    opacity: .8;
   }
 }

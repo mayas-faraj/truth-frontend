@@ -9,7 +9,7 @@ const Article = ({content}) => {
         <article className={style['article-wrapper']}>
           <div className={style['article__image-container']}>
           { content.attributes.truthCover.data?.attributes?.mime.startsWith('image') && 
-            <Link href={'/news/' + content.attributes.slug}>
+            <Link className={style['article-image-link']} href={'/news/' + content.attributes.slug}>
               <img className={style['article__image'] + ' ' + style['article__image--truth']} alt={content.attributes.truthCover.data.attributes.alternativeText} src={urls.backend_url + content.attributes.truthCover.data.attributes.url} />
               <img className={style['article__image'] + ' ' + style['article__image--false']} alt={content.attributes.falseCover.data.attributes.alternativeText} src={urls.backend_url + content.attributes.falseCover.data.attributes.url} />
             </Link>

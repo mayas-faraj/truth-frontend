@@ -14,11 +14,11 @@ export default function Home({ mainArticle, articles, categories, reports }) {
       </section>
       <section className={style['content-section']}>
         <section className={style['news-section']}>
-          { articles.map(article => <Article key={article.slug} content={article} />) }
+          { articles.map(article => <Article key={article.attributes.slug} content={article} />) }
         </section>
         <section className={style['sidebar-section']}>
           <div className={style.categories}>
-          { categories.map(category=><Category key={category.name} content={category} />) }
+          { categories.map(category=><Category key={category.attributes.name} content={category} />) }
           </div>
           <div className={style.reports}>
           { <Type content={{reports: reports, attributes: {name:'تقارير قانونية'}}} /> }

@@ -1,16 +1,17 @@
 import Head from 'next/head';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import PinterestIcon from '@mui/icons-material/Pinterest';
-
 import Header from '../components/header';
 import Footer from '../components/footer';
-import "../styles/global.scss";
+import colors from '../styles/colors.module.scss';
+import '../styles/globals.scss';
 
 export default function App({Component, pageProps}) {
   const footerProps={
-    aboutTitle: "موقع الحقيقة",
+    aboutTitle: "سيريا فاكت",
     aboutContent: "موقع سوري مهمته رصد الأخبار الزائفة والإضاءة على على الحقيقة بعين سورية",
     linksTitle: "روابط مهمة",
     links: [
@@ -29,6 +30,18 @@ export default function App({Component, pageProps}) {
       { title: "صفحتنا على اليوتيوب", href: "http://youtube.com/", icon: YouTubeIcon }
     ]
   };
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: colors.primaryColor
+      },
+      secondary: {
+        main: colors.secondaryColor
+      }
+    },
+    direction: 'rtl'
+  })
   return (
     <>
       <Head>
@@ -36,7 +49,9 @@ export default function App({Component, pageProps}) {
       </Head>
 			<Header/>
       <div className="container">
-        <Component {...pageProps}/>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps}/>
+        </ThemeProvider>
       </div>
       <Footer {...footerProps} />
     </>

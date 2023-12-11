@@ -1,0 +1,41 @@
+@import 'colors';
+
+.wrapper {
+    margin-top: 40px;
+}
+
+.logo__container {
+    text-align: center;
+}
+
+.logo {
+    max-width: 400px;
+    height: auto;
+    animation: glow 4s ease-out infinite reverse;
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 0 $primary-color)
+    }
+
+    25% {
+        filter: drop-shadow(25px -25px 15px $primary-color)
+    }
+
+    49% {
+        filter: drop-shadow(0 0 0 $primary-color)
+    }
+
+    50% {
+        filter: drop-shadow(0 0 0 $secondary-color)
+    }
+    
+    75% {
+        filter: drop-shadow(-25px 25px 15px $secondary-color)
+    }
+
+    99% {
+        filter: drop-shadow(0 0 0 $secondary-color)
+    }
+}

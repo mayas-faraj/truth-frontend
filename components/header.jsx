@@ -1,27 +1,38 @@
 import React from 'react';
 import Link from 'next/link';
 import HomeIcon from '@mui/icons-material/Home';
-import LanguageIcon from '@mui/icons-material/Language';
+import MenuIcon from '@mui/icons-material/Menu';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import InfoIcon from '@mui/icons-material/Info';
 import CallIcon from '@mui/icons-material/Call';
 import style from '/styles/menu.module.scss';
 export default function Header(props) {
   const items=[
-    { title: "الصفحة الرئيسية", icon: <HomeIcon/>, link: "/" },
-    { title: "حقيقة الأخبار", icon: <LanguageIcon/>, link: "/news" },
+    { title: "الرئيسية", icon: <HomeIcon/>, link: "/" },
     { title: "تقارير", icon: <AssignmentIcon/>, link: "/reports" },
-    { title: "كيفية العمل", icon: <InfoIcon/>, link: "/about-us" },
-    { title: "اتصل بنا", icon: <CallIcon/>, link: "/contact-us" },
+    { title: "آلية التحقق", icon: <InfoIcon/>, link: "/about-us" },
+    { title: "أبلغنا عن خبر كاذب", icon: <CallIcon/>, link: "/contact-us" },
   ];
+
+  const [activeMenu, setActiveMenu] = React.useState(false)
+
   return (
+    <>
+    <h1 className={style["title"]}>الخبر <span className={style["title--false"]}>الكاذب</span> والخبر <span className={style["title--truth"]}>الصحيح</span></h1>
     <div className={style["wrapper"]}>
-      <div className={style["image-container"]}>
+      <div className={style["logo-container"]}>
         <img src="/assets/imgs/logo.png"/>
+        <h1 className={style.logo__title}>
+          <span className={style['logo-title--truth']}>FFN</span>
+          <span className={style['logo-title--false']}>News</span>
+        </h1>
       </div>
       <div className={style["nav-wrapper"]}>
-        <nav className={style["nav"]}>
-          <ul className={style["nav-menu"]}>
+        <div className={style["mobile-nav"]}>
+          <MenuIcon className={style["mobile-nav__button"]} onClick={() => setActiveMenu(!activeMenu)}/>
+        </div>
+        <nav className={style["nav"]} onClick={() => setActiveMenu(false)}>
+          <ul className={style["nav-menu"] + (activeMenu ? " " + style["nav-menu--active"]: "")}>
           {
             items.map(item=>(
               <li key={item.link} className={style["nav__item"]}>
@@ -36,5 +47,6 @@ export default function Header(props) {
         </nav>
       </div>
     </div>
+    </>
   );
 }
