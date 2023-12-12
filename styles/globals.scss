@@ -39,3 +39,9 @@ html {
     max-width: $desktop-width;
   }
 }
+
+#__next {
+  position: relative;
+  overflow: hidden;
+  padding-top: 5px;
+}
