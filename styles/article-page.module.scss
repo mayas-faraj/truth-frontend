@@ -3,26 +3,6 @@
 .title {
     text-align: center;
     margin: 50px 0;
-
-    span {
-        color: $secondary-color;
-        position: relative;
-        padding: 25px;
-
-        &::after {
-            display: block;
-            position: absolute;
-            content: '';
-            background-color: $primary-color;
-            top: -0.4rem;
-            left: 0;
-            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
-            height: 5rem;
-            width: 100%;
-            z-index: -1;
-        }
-    }
-
 }
 
 .image-wrapper {

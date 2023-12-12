@@ -10,16 +10,7 @@ export default function Slug({ report, categories }) {
 	);
 }
 
-export async function getStaticPaths(context) {
-  let result = await fetch(`${urls.backend_url}/api/reports?fields[0]=slug`);
-  const reportPaths = await result.json();
-  return { 
-    paths: reportPaths.data.map(item => ({params: {slug: item.attributes.slug}})),
-    fallback: 'blocking'
-  }
-} 
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   // read reports
   let result = await fetch(`${urls.backend_url}/api/reports?filters[slug]=${context.params.slug}&populate[0]=cover&populate[1]=content`);
   const reportsResult = await result.json();

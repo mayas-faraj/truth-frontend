@@ -29,7 +29,7 @@ export default function Home({ mainArticle, articles, categories, reports }) {
 	);
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   // read articles
   let result = await fetch(`${urls.backend_url}/api/articles?pagination[page]=1&pagination[pageSize]=10&populate[0]=truthCover&populate[1]=falseCover&sort[0]=createdAt%3Adesc`);
   const articlesResult = await result.json();

@@ -47,7 +47,7 @@ export default function AboutUs(props) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   return {
     props: {
       title: "آلية العمل في كشف الحقائق",

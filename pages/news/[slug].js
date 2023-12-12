@@ -18,16 +18,7 @@ export default function Slug({ article, categories }) {
 	);
 }
 
-export async function getStaticPaths(context) {
-  let result = await fetch(`${urls.backend_url}/api/articles?fields[0]=slug`);
-  const articlePaths = await result.json();
-  return { 
-    paths: articlePaths.data.map(item => ({params: {slug: item.attributes.slug}})),
-    fallback: 'blocking'
-  }
-} 
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   // read articles
   let result = await fetch(`${urls.backend_url}/api/articles?filters[slug]=${context.params.slug}&populate[0]=truthCover&populate[1]=falseCover&populate[2]=content`);
   const articlesResult = await result.json();

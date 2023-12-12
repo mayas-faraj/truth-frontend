@@ -13,7 +13,7 @@ export default function Reports({ reports }) {
 	);
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   // read reports
   let result = await fetch(`${urls.backend_url}/api/reports?pagination[page]=1&pagination[pageSize]=12&populate[0]=cover&populate[1]=content&sort[0]=createdAt%3Adesc`);
   const reportsResult = await result.json();
