@@ -2,8 +2,7 @@ import Head from 'next/head';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import PinterestIcon from '@mui/icons-material/Pinterest';
+import XIcon from '@mui/icons-material/X';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import colors from '../styles/colors.module.scss';
@@ -24,10 +23,9 @@ export default function App({Component, pageProps}) {
     ],
     socialTitle: "تواصل معنا",
     socials: [
-      { title: "صفحة فيسبوك", href: "http://facebook.com/", icon: FacebookIcon },
-      { title: "حساب تويتر", href: "http://twitter.com/", icon: TwitterIcon },
-      { title: "صفحة بنترست", href: "http://pinterist.com/", icon: PinterestIcon },
-      { title: "صفحتنا على اليوتيوب", href: "http://youtube.com/", icon: YouTubeIcon }
+      { title: "صفحة فيسبوك", href: "http://facebook.com/therealimage", icon: FacebookIcon },
+      { title: "حساب منصة أكس", href: "http://twitter.com/therealimage", icon: XIcon },
+      { title: "صفحتنا على اليوتيوب", href: "http://youtube.com/therealimage", icon: YouTubeIcon }
     ]
   };
 
