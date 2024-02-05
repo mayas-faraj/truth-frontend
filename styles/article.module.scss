@@ -63,7 +63,7 @@
   }
 
   &::before {
-    content: 'FACT';
+    content: 'TRUE \2713';
     color: $true-color;
     top: 15px;
     right: 15px;
@@ -71,7 +71,7 @@
   }
 
   &::after {
-    content: 'FAKE';
+    content: 'FALSE X';
     color: $false-color;
     bottom: 15px;
     left: 15px;
