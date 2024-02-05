@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import style from '../styles/report.module.scss';
 import urls from '../public/assets/data/urls.json';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 const Report = ({content}) => {
     return (

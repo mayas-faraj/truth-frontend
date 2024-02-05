@@ -1,4 +1,3 @@
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import urls from '../public/assets/data/urls.json';
 import style from '../styles/article-page.module.scss';
 
@@ -41,7 +40,6 @@ const ArticlePage = ({ content }) => {
         <p className={style['excerpt'] + ' ' + style['excerpt--false']}>{content.attributes.falseExcerpt}</p>
       </div>
       <p className={style['article__content']}>{ content.attributes.content[0] != null ? content.attributes.content[0].body : ""}</p>
-      <div className={style['article__date']}><AccessTimeIcon /><time dateTime={content.attributes.createdAt}>{new Date(content.attributes.createdAt).toLocaleDateString()}</time></div>
     </article>
   )
 }

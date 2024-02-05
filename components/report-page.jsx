@@ -1,6 +1,5 @@
 import style from '../styles/report-page.module.scss';
 import urls from '../public/assets/data/urls.json';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 const ReportPage = ({ content }) => {
   return (
@@ -21,7 +20,6 @@ const ReportPage = ({ content }) => {
         }
       </div>
       <p className={style['report__content']}>{ content.attributes.content[0].body }</p>
-      <div className={style['report__date']}><AccessTimeIcon /><time dateTime={content.attributes.createdAt}>{new Date(content.attributes.createdAt).toLocaleDateString()}</time></div>
     </report>
   )
 }
