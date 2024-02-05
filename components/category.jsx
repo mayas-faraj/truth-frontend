@@ -24,7 +24,7 @@ const Category = ({ content }) => {
                 }
                 </Link>
               </div>
-              <p className={style.category__article_text}>{article.attributes.title}</p>
+              <p className={style.category__article_text}><Link href={'/news/' + article.attributes.slug}>{article.attributes.title}</Link></p>
             </div>
           ))
         }
