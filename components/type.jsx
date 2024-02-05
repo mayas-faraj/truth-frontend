@@ -14,12 +14,12 @@ const Type = ({ content }) => {
                 <Link href={'/news/' + report.attributes.slug}>
                 {
                   report.attributes.cover.data?.attributes?.mime.startsWith('image') && 
-                  <img className={style.type__image} alt={report.attributes.cover.data.attributes.alternativeText} src={urls.backend_url + report.attributes.cover?.data.attributes.formats.thumbnail.url} />
+                  <img className={style.type__image} alt={report.attributes.cover.data.attributes.alternativeText} src={urls.image_url + report.attributes.cover?.data.attributes.formats.thumbnail.url} />
                 }
                 {
                   report.attributes.cover?.data?.attributes?.mime.startsWith('video') && 
                   <video className={style.type__video} controls>
-                    <source src={urls.backend_url + report.attributes.cover?.data.attributes.url} type={report.attributes.cover.data.attributes.mime} />
+                    <source src={urls.image_url + report.attributes.cover?.data.attributes.url} type={report.attributes.cover.data.attributes.mime} />
                   </video>
                 }
                 </Link>

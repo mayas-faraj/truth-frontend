@@ -14,12 +14,12 @@ const Category = ({ content }) => {
                 <Link href={'/news/' + article.attributes.slug}>
                 {
                   article.attributes.truthCover.data?.attributes?.mime.startsWith('image') && 
-                  <img className={style.category__image} alt={article.attributes.truthCover.data.attributes.alternativeText} src={urls.backend_url + article.attributes.truthCover?.data.attributes.formats.thumbnail.url} />
+                  <img className={style.category__image} alt={article.attributes.truthCover.data.attributes.alternativeText} src={urls.image_url + article.attributes.truthCover?.data.attributes.formats.thumbnail.url} />
                 }
                 {
                   article.attributes.truthCover?.data?.attributes?.mime.startsWith('video') && 
                   <video className={style.category__video} controls>
-                    <source src={urls.backend_url + article.attributes.truthCover?.data.attributes.url} type={article.attributes.truthCover.data.attributes.mime} />
+                    <source src={urls.image_url + article.attributes.truthCover?.data.attributes.url} type={article.attributes.truthCover.data.attributes.mime} />
                   </video>
                 }
                 </Link>

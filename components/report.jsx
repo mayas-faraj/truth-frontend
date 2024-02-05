@@ -8,7 +8,7 @@ const Report = ({content}) => {
         <div className={style.wrapper}>
           <div className={style['image-container']}>
             <Link href={'/reports/' + content.attributes.slug}>
-              <img className={style['image-container__image']} src={urls.backend_url + content.attributes.cover.data.attributes.url} alt={content.attributes.cover.data.attributes.alternativeText}/>
+              <img className={style['image-container__image']} src={urls.image_url + content.attributes.cover.data.attributes.url} alt={content.attributes.cover.data.attributes.alternativeText}/>
             </Link>
           </div>
           <div className={style['text-container']}>

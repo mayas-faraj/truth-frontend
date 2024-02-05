@@ -10,13 +10,13 @@ const Article = ({content}) => {
           <div className={style['article__image-container']}>
           { content.attributes.truthCover.data?.attributes?.mime.startsWith('image') && 
             <Link className={style['article-image-link']} href={'/news/' + content.attributes.slug}>
-              <img className={style['article__image'] + ' ' + style['article__image--truth']} alt={content.attributes.truthCover.data.attributes.alternativeText} src={urls.backend_url + content.attributes.truthCover.data.attributes.url} />
-              <img className={style['article__image'] + ' ' + style['article__image--false']} alt={content.attributes.falseCover.data.attributes.alternativeText} src={urls.backend_url + content.attributes.falseCover.data.attributes.url} />
+              <img className={style['article__image'] + ' ' + style['article__image--truth']} alt={content.attributes.truthCover.data.attributes.alternativeText} src={urls.image_url + content.attributes.truthCover.data.attributes.url} />
+              <img className={style['article__image'] + ' ' + style['article__image--false']} alt={content.attributes.falseCover.data.attributes.alternativeText} src={urls.image_url + content.attributes.falseCover.data.attributes.url} />
             </Link>
           }
           { content.attributes.truthCover.data?.attributes?.mime.startsWith('video') && 
             <video className={style['article__video']} controls>
-              <source src={urls.backend_url + content.attributes.truthCover.data.attributes.url} type={content.attributes.truthCover.data.mime} />
+              <source src={urls.image_url + content.attributes.truthCover.data.attributes.url} type={content.attributes.truthCover.data.mime} />
             </video>
           }
           </div>

@@ -1,3 +1,4 @@
 {
-  "backend_url": "http://therealimage.sy/data"
+  "backend_url": "http://therealimage.sy/data",
+  "image_url": "http://therealimage.sy/data"
 }

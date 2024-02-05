@@ -9,13 +9,13 @@ const ReportPage = ({ content }) => {
       <div className={style['image-wrapper']}>
         {content.attributes.cover.data?.attributes?.mime.startsWith('image') &&
           <div className={style['image-container'] + ' ' + style['image-container--truth']}>
-            <img className={style['report__image']} alt={content.attributes.cover.data.attributes.alternativeText} src={urls.backend_url + content.attributes.cover.data.attributes.url} />
+            <img className={style['report__image']} alt={content.attributes.cover.data.attributes.alternativeText} src={urls.image_url + content.attributes.cover.data.attributes.url} />
           </div>
         }
         {content.attributes.cover.data?.attributes?.mime.startsWith('video') &&
           <div className={style['video-container'] + ' ' + style['video-container--false']}>
             <video controls className={style['report__video']}>
-              <source src={urls.backend_url + content.attributes.cover.data.attributes.url} type={content.attributes.cover.data.mime} />
+              <source src={urls.image_url + content.attributes.cover.data.attributes.url} type={content.attributes.cover.data.mime} />
             </video>
           </div>
         }
