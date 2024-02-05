@@ -22,10 +22,6 @@ export default function Header(props) {
     <div className={style["wrapper"]}>
       <div className={style["logo-container"]}>
         <img src="/assets/imgs/logo.png"/>
-        <h1 className={style.logo__title}>
-          <span className={style['logo-title--truth']}>FFN</span>
-          <span className={style['logo-title--false']}>News</span>
-        </h1>
       </div>
       <div className={style["nav-wrapper"]}>
         <div className={style["mobile-nav"]}>
