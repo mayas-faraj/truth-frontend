@@ -75,11 +75,20 @@
     flex-basis: 200px;
     flex-grow: 1;
     margin: 0;
+    padding-bottom: 15px;
+}
+
+.excerpt--truth {
+    color: $true-color;
+}
+
+.excerpt--false {
+    color: $false-color;
 }
 
 .subtitle:first-child,
 .excerpt:first-child {
-    border-left: 5px solid;
+    border-left: 5px solid $primary-color;
 }
 
 .subtitle:last-child,
@@ -89,4 +98,7 @@
 
 .article__content {
     text-align: justify;
+    margin-top: 0;
+    padding-top: 15px;
+    border-top: 5px solid $primary-color;
 }
